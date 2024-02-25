@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_search"
+        android:title="Занятия"
+        android:icon="@drawable/baseline_calendar_today_24" />
+    <item android:id="@+id/action_settings"
+        android:title="Заявки"
+        android:icon="@drawable/baseline_note_add_24" />
+    <item android:id="@+id/action_navigation"
+        android:title="Добавить"
+        android:icon="@drawable/baseline_add_task_24" />
+    <item android:id="@+id/action_navigation1"
+        android:title="Чат"
+        android:icon="@drawable/baseline_chat_bubble_24" />
+    <item android:id="@+id/action_navigation2"
+        android:title="Ещё"
+        android:icon="@drawable/baseline_more_horiz_24" />
+</menu>

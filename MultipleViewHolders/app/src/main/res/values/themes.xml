@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MultipleViewHolders" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <content name="colorPrimary">@color/my_light_primary</content> -->
+    </style>
+
+    <style name="Theme.MultipleViewHolders" parent="Base.Theme.MultipleViewHolders" />
+
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <item name="postSplashScreenTheme">@style/Base.Theme.MultipleViewHolders</item>
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_screen_logo</item>
+    </style>
+</resources>
