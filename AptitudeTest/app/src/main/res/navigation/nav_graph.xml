@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/launchesFragment">
+
+    <fragment
+        android:id="@+id/launchesFragment"
+        android:name="com.example.aptitudetest.presentation.fragments.LaunchesFragment"
+        android:label="fragment_launches"
+        tools:layout="@layout/fragment_launches">
+
+        <action
+            android:id="@+id/action_launchesFragment_to_launchesDetailsFragment"
+            app:destination="@id/launchesDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/launchesDetailsFragment"
+        android:name="com.example.aptitudetest.presentation.fragments.LaunchesDetailsFragment"
+        android:label="fragment_launches_details"
+        tools:layout="@layout/fragment_launches_details">
+        <argument
+            android:name="docsArg"
+            app:argType="com.example.aptitudetest.data.Docs" />
+    </fragment>
+</navigation>

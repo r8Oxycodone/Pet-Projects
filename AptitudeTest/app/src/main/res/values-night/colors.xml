@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="coil_error_load_drawable_hint">@color/white</color>
+</resources>

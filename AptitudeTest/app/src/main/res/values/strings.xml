@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AptitudeTest</string>
+    <string name="name_text_view">Name: %1$s</string>
+    <string name="flight_text_view">Flights: %1$s</string>
+    <string name="success_text_view">Success: %1$s</string>
+    <string name="fire_date_text_view">Fire date: %1$s</string>
+    <string name="detailed_date_text_view">Mission date: %1$s</string>
+</resources>

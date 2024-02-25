@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.example.aptitudetest.R" />
+
+        <variable
+            name="launch"
+            type="com.example.aptitudetest.data.Docs" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:barrierDirection="start"
+                app:constraint_referenced_ids="missionIconImageView" />
+
+            <Space
+                android:id="@+id/spacer"
+                android:layout_width="40dp"
+                android:layout_height="0dp"
+                app:layout_constraintEnd_toStartOf="@id/barrier" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/nameTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:ellipsize="marquee"
+                android:fadingEdge="horizontal"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:text="@{context.getString(R.string.name_text_view, launch.name)}"
+                app:layout_constraintBottom_toTopOf="@id/flightsTextView"
+                app:layout_constraintEnd_toStartOf="@+id/spacer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/app_name" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/flightsTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="@{context.getString(R.string.flight_text_view, launch.cores.get(0).flight.toString())}"
+                app:layout_constraintBottom_toTopOf="@id/successTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/nameTextView"
+                tools:text="@string/app_name" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/successTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="@{context.getString(R.string.success_text_view, launch.success.toString())}"
+                app:layout_constraintBottom_toTopOf="@id/fireDateTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/flightsTextView"
+                tools:text="@string/app_name" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/fireDateTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/successTextView"
+                tools:text="@string/app_name" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/missionIconImageView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="centerInside"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="W, 1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.8"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/avatars" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>
