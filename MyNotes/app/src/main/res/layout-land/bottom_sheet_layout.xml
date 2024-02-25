@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_sheet_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/bottom_sheet_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/bar"
+            android:layout_gravity="center"
+            android:layout_width="40dp"
+            android:layout_height="6dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/shape_image" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/add_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_baseline_color_lens_24"
+            android:fontFamily="@font/open_sans_regular"
+            android:gravity="center"
+            android:paddingStart="290dp"
+            android:paddingEnd="290dp"
+            android:text="@string/choose_color"
+            android:textColor="@color/add_text"
+            android:textSize="18sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="6dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/color_spinner_item" />
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
