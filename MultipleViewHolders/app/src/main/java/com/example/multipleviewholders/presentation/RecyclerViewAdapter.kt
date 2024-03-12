@@ -9,8 +9,7 @@ import com.example.multipleviewholders.databinding.LessonBinding
 
 class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    inner class ContentViewHolder(val binding: LessonBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+    class ContentViewHolder(val binding: LessonBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(lessons: Schedule.Lessons) {
             binding.lessonPlace.text = lessons.lessonPlace
             binding.lessonStartTime.text = lessons.lessonStartTime
@@ -21,7 +20,7 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         }
     }
 
-    inner class HeaderViewHolder(private val binding: DateBinding) :
+    class HeaderViewHolder(private val binding: DateBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(date: Schedule.Date) {
             binding.date.text = date.fakeDate

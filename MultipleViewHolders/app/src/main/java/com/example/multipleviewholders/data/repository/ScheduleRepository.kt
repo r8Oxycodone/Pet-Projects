@@ -4,6 +4,7 @@ import com.example.multipleviewholders.data.retrofit.FitnesskitRetrofitService
 import com.example.multipleviewholders.presentation.Lessons
 import com.example.multipleviewholders.presentation.Schedule
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.flow
 import java.time.LocalDate
 import java.time.LocalTime
@@ -11,7 +12,8 @@ import java.time.format.DateTimeFormatter
 import java.time.temporal.ChronoUnit
 
 class ScheduleRepository(
-    private val fitnesskitRetrofitService: FitnesskitRetrofitService
+    private val fitnesskitRetrofitService: FitnesskitRetrofitService,
+    private val isReadyToShowActivity: MutableStateFlow<Boolean>
 ) {
     private fun parseTime(lesson: Lessons): String {
         val startTime = LocalTime.parse(lesson.startTime)
@@ -77,5 +79,6 @@ class ScheduleRepository(
         for (lesson in scheduleList.sortedWith(
             compareBy({ it.date }, { it.lessonStartTime })
         )) emit(lesson)
+        isReadyToShowActivity.value = true
     }
 }

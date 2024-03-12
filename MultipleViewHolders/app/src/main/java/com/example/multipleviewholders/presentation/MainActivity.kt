@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         lifecycleScope.launch {
             lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.scheduleFlow.collectLatest {
+                viewModel.scheduleFlow.collect {
                     recyclerViewAdapter.addLessonCard(it)
                 }
 

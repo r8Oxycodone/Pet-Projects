@@ -17,8 +17,7 @@ class MainActivityViewModel : ViewModel() {
     init {
         val fitnesskitRetrofitService =
             FitnesskitRetrofitObject.getInstance().create(FitnesskitRetrofitService::class.java)
-        val scheduleRepository = ScheduleRepository(fitnesskitRetrofitService)
+        val scheduleRepository = ScheduleRepository(fitnesskitRetrofitService, _isReadyToShowActivity)
         scheduleFlow = scheduleRepository.getSchedule()
-        _isReadyToShowActivity.value = true
     }
 }
